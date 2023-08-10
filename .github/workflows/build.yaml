@@ -13,4 +13,4 @@ jobs:
           docker login -u harshdesai7979 -p password1
           cd python/
           docker build -f Dockerfile . -t harshdesai7979/stellarhealthpython:latest --platform linux/amd64
-      
+          docker push harshdesai7979/stellarhealthpython:latest
