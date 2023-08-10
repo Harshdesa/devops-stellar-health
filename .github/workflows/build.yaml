@@ -9,10 +9,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Dockerize
-        uses: manusa/actions-publish-docker@v1.1.2
-        with:
-          name: harshdesai7979/stellarhealthpython
-          username: harshdesai7979
-          password: password1
-          tag: latest
+      - run: |
+          docker login -u harshdesai7979 -p password1
+          docker build -f python/Dockerfile . -t harshdesai7979/stellarhealthpython:latest --platform linux/amd64
+      
