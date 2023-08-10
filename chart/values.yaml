@@ -1,0 +1,23 @@
+# Default values for chart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 3
+
+image:
+  repository: harshdesai7979/stellarhealthpython
+  pullPolicy: Always
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 80
+
+env:
+  TEST_VARIABLE: "foo"
+
+resources: {}
+
+nodeSelector: {}
+tolerations: []
+affinity: {}

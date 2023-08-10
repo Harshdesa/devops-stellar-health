@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "fibonacci.fullname" . }}-env
+  labels:
+    app: {{ template "fibonacci.name" . }}
+    chart: {{ template "fibonacci.chart" . }}
+data:
+{{ toYaml .Values.env | indent 2 }}
