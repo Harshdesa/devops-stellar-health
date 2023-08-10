@@ -11,5 +11,6 @@ jobs:
         uses: actions/checkout@v3
       - run: |
           docker login -u harshdesai7979 -p password1
-          docker build -f python/Dockerfile . -t harshdesai7979/stellarhealthpython:latest --platform linux/amd64
+          cd python/
+          docker build -f Dockerfile . -t harshdesai7979/stellarhealthpython:latest --platform linux/amd64
       
