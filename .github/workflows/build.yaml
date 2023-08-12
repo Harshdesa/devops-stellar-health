@@ -9,11 +9,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Test
+      - name: Python Test
         run: |
           cd python/
           pytest test.py
-      - run: |
+      - name: Go Test
+        run: |
+          cd go/
+          go test
+      - name: Build and push python container
+        run: |
           docker login -u harshdesai7979 -p password1
           cd python/
           docker build -f Dockerfile . -t harshdesai7979/stellarhealthpython:latest --platform linux/amd64
