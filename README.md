@@ -12,7 +12,7 @@ For actual production deployment, ideally an nginx ingress controller with an in
 Answers to some of the questions in the interview doc:
 
 Is the output correct? How do you verify?\
-  -> I need to write unit tests
+  -> Using unit tests. See python/test.py
 
 How do you ensure changes don't break the application?\
   -> ideally this would go through a dev, qa, staging then finally production to avoid breaking the application.\
